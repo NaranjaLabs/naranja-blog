@@ -19,6 +19,9 @@
   },
   "plugins": ["react", "@typescript-eslint", "eslint-plugin-import-helpers"],
   "rules": {
+    "prettier/prettier": [
+      "error", {"endOfLine": "auto"}
+    ],
     "react/react-in-jsx-scope": "off",
     "import-helpers/order-imports": [
       "warn",
