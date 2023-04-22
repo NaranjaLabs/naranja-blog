@@ -1,20 +1,15 @@
 import './globals.css';
 
-export const metadata = {
-  title: 'Naranja Blog',
-  description: 'Criado pela organização Naranja Labs'
-};
-
 export default function RootLayout({
   children
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-br">
+    <html>
       <body>
-        {/* <header>Layout Padrão</header> */}
-        <main>{children}</main>
+        teste
+        {children}
       </body>
     </html>
   );
