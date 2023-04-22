@@ -1,9 +1,10 @@
+import StudioNavBar from './components/StudioNavBar';
+
 import { schemaTypes } from './schemas';
 
 import { visionTool } from '@sanity/vision';
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
-import StudioNavBar from './components/StudioNavBar';
 // import { defineConfig } from 'sanity/lib/exports';
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
