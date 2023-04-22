@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 
-export default function Post() {
+export default function Post({ params }) {
+  console.log(params);
   return (
     <div className="flex flex-row justify-center gap-4 max-w-6xl mx-auto mt-4">
       {/* Blog post side */}
@@ -67,3 +68,5 @@ export default function Post() {
     </div>
   );
 }
+
+export async function generateStaticParams({ params }) {}
