@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body>
-        <header>Olar</header>
+        {/* <header>Layout Padrão</header> */}
         <main>{children}</main>
       </body>
     </html>
