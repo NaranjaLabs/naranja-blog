@@ -1,75 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-interface Idatapost {
-  id: number;
-  attributes: {
-    title: string;
-    body: string;
-    author: string;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    slug: string;
-    main_image: {
-      data: {
-        id: number;
-        attributes: {
-          name: string;
-          alternativeText: string | null;
-          caption: string | null;
-          width: number;
-          height: number;
-          formats: {
-            thumbnail: {
-              name: string;
-              hash: string;
-              ext: string;
-              mime: string;
-              path: string | null;
-              width: number;
-              height: number;
-              size: number;
-              url: string;
-            };
-            medium: {
-              name: string;
-              hash: string;
-              ext: string;
-              mime: string;
-              path: string | null;
-              width: number;
-              height: number;
-              size: number;
-              url: string;
-            };
-            small: {
-              name: string;
-              hash: string;
-              ext: string;
-              mime: string;
-              path: string | null;
-              width: number;
-              height: number;
-              size: number;
-              url: string;
-            };
-          };
-          hash: string;
-          ext: string;
-          mime: string;
-          size: number;
-          url: string;
-          previewUrl: string | null;
-          provider: string;
-          provider_metadata: any;
-          createdAt: string;
-          updatedAt: string;
-        };
-      };
-    };
-  };
-}
+import { Idatapost } from '@components/app/types/interfaces';
 
 async function getData(id: string) {
   const response = await fetch(
@@ -86,7 +18,7 @@ export default async function Post({ params }: { params: { id: string } }) {
   } = await getData(params.id);
 
   return (
-    <div className="flex flex-row justify-center gap-4 max-w-6xl mx-auto mt-4">
+    <div className="lg:flex flex-row justify-center gap-4 max-w-6xl mx-auto mt-4">
       {/* Blog post side */}
       <div className="max-w-5xl w-full bg-white">
         <div className="w-full max-h-72 overflow-hidden relative h-[300px]">
@@ -121,21 +53,29 @@ export default async function Post({ params }: { params: { id: string } }) {
         </div>
       </div>
       {/* Sidebar */}
-      <div className="max-w-xs w-full bg-white p-4 h-64 pt-8">
+      <div className="lg:max-w-xs w-full bg-white p-4 h-64 pt-8 relative mt-8">
         <div className="grid place-items-center gap-4">
-          <div className="flex items-center">
-            <Image
-              src={'/post/vitor.jpg'}
-              width={40}
-              height={40}
-              alt="profile"
-              className="rounded-full drop-shadow-md"
-            />
-            <h2>{attributes.author}</h2>
+          <div className="lg:block mx-auto flex items-center justify-evenly w-[90%] max-w-3xl">
+            <div className="flex items-center gap-4 lg:justify-center">
+              <Image
+                src={'/post/vitor.jpg'}
+                width={40}
+                height={40}
+                alt="profile"
+                className="rounded-full drop-shadow-md"
+              />
+              <h2>{attributes.author}</h2>
+            </div>
+            <button className="w-[70%] lg:w-full max-w-sm h-10 bg-sky-700 rounded-md drop-shadow-md text-white lg:mt-2">
+              Social Media
+            </button>
           </div>
-          <button className="w-[70%] h-10 bg-sky-700 rounded-md drop-shadow-md text-white">
-            Social Media
-          </button>
+          <h4 className="mx-4">
+            Bio: Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Excepturi iusto voluptates corrupti tempora dolor modi, quos
+            voluptate fugiat esse. Explicabo nesciunt sapiente alias iste ex,
+            quia tempora soluta nulla minima.
+          </h4>
         </div>
       </div>
     </div>
