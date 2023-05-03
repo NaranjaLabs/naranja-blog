@@ -1,25 +1,24 @@
-// import { previewData } from 'next/dist/client/components/headers';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { previewData } from 'next/headers';
+import Article from '@components/Article';
+import MainArticle from '@components/MainArticle';
 
-import Article from '@components/components/Article';
-import MainArticle from '@components/components/MainArticle';
+import { Post } from '../../typings';
 
-export default function Blog() {
-  console.log(previewData());
+import urlFor from '@lib/imageUrlBuilder';
+import { sanityQueries } from '@lib/queries';
 
-  if (previewData()) {
-    return <div>Preview Mode</div>;
-  } else {
-    return (
-      <main className="max-w-6xl px-10 m-auto mt-12 place-items-center">
-        <MainArticle />
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-14">
-          <Article />
-          <Article />
-          <Article />
-        </div>
-      </main>
-    );
-  }
+export default async function Blog() {
+  const posts: Post[] = await sanityQueries.posts();
+  return (
+    <main className="max-w-6xl px-10 m-auto mt-12 place-items-center">
+      <MainArticle post={posts[0]} />
+      <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-14">
+        {posts.map(
+          (post, i) => i > 0 && <Article post={post} key={post._id} />
+        )}
+      </div>
+    </main>
+  );
 }

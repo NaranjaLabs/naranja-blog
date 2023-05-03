@@ -28,6 +28,16 @@ export default defineType({
       }
     }),
     defineField({
+      name: 'linkedin',
+      title: 'Linkedin',
+      type: 'string'
+    }),
+    defineField({
+      name: 'github',
+      title: 'Github',
+      type: 'string'
+    }),
+    defineField({
       name: 'bio',
       title: 'Bio',
       type: 'array',
