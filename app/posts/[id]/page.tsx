@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-export default async function Post({ params }: { params: { id: string } }) {
+export default async function Posts({ params }: { params: { id: string } }) {
   // const {
   //   data: { attributes }
   // } = await getData(params.id);
