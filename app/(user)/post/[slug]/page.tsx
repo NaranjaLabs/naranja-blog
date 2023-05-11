@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 export default async function Post({ params: { slug } }: Props) {
   const post: Post = await sanityQueries.postBySlug(slug);
   return (
-    <div className="lg:flex flex-row justify-center gap-4 max-w-6xl mx-auto mt-4">
+    <main className="lg:flex flex-row justify-center gap-4 max-w-6xl mx-auto mt-4">
       {/* Blog post side */}
       <div className="max-w-5xl w-full bg-white">
         <div className="w-full max-h-72 overflow-hidden relative h-[300px]">
@@ -92,6 +92,6 @@ export default async function Post({ params: { slug } }: Props) {
           </h4>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
