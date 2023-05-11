@@ -1,12 +1,8 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
 import Article from '@components/Article';
 import MainArticle from '@components/MainArticle';
 
 import { Post } from '../../typings';
 
-import urlFor from '@lib/imageUrlBuilder';
 import { sanityQueries } from '@lib/queries';
 
 export default async function Blog() {

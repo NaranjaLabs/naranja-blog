@@ -13,6 +13,14 @@ import { PortableText } from '@portabletext/react';
 type Props = {
   params: { slug: string };
 };
+
+export async function generateStaticParams() {
+  const posts: Post[] = await sanityQueries.posts();
+  const slugs = posts.map(({ slug }) => slug.current);
+  return slugs.map((slug) => ({
+    slug
+  }));
+}
 export default async function Post({ params: { slug } }: Props) {
   const post: Post = await sanityQueries.postBySlug(slug);
   return (
