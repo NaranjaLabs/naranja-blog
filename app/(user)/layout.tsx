@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className="bg-[#F8F8F8]">
         <Header />
-        <main>{children}</main>
+        {children}
         <Footer />
       </body>
     </html>
