@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { Post } from '../typings';
 
 import urlFor from '@lib/imageUrlBuilder';
-import img from '/public/imagem.webp';
 
 export default function MainArticle({ post }: { post: Post }) {
   return (
