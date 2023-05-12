@@ -8,7 +8,8 @@ export default defineType({
     defineField({
       name: 'name',
       title: 'Name',
-      type: 'string'
+      type: 'string',
+      validation: (Rule) => Rule.required()
     }),
     defineField({
       name: 'slug',
@@ -17,12 +18,14 @@ export default defineType({
       options: {
         source: 'name',
         maxLength: 96
-      }
+      },
+      validation: (Rule) => Rule.required()
     }),
     defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
+      validation: (Rule) => Rule.required(),
       options: {
         hotspot: true
       }
@@ -48,7 +51,8 @@ export default defineType({
           styles: [{ title: 'Normal', value: 'normal' }],
           lists: []
         }
-      ]
+      ],
+      validation: (Rule) => Rule.required()
     })
   ],
   preview: {
