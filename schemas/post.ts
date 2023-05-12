@@ -8,12 +8,14 @@ export default defineType({
     defineField({
       name: 'title',
       title: 'Title',
+      validation: (Rule) => Rule.required(),
       type: 'string'
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      validation: (Rule) => Rule.required(),
       options: {
         source: 'title',
         maxLength: 96
@@ -23,7 +25,8 @@ export default defineType({
       name: 'author',
       title: 'Author',
       type: 'reference',
-      to: { type: 'author' }
+      to: { type: 'author' },
+      validation: (Rule) => Rule.required()
     }),
     defineField({
       name: 'mainImage',
@@ -31,23 +34,27 @@ export default defineType({
       type: 'image',
       options: {
         hotspot: true
-      }
+      },
+      validation: (Rule) => Rule.required()
     }),
     defineField({
       name: 'categories',
       title: 'Categories',
       type: 'array',
+      validation: (Rule) => Rule.required(),
       of: [{ type: 'reference', to: { type: 'category' } }]
     }),
     defineField({
       name: 'publishedAt',
       title: 'Published at',
-      type: 'datetime'
+      type: 'datetime',
+      validation: (Rule) => Rule.required()
     }),
     defineField({
       name: 'body',
       title: 'Body',
-      type: 'blockContent'
+      type: 'blockContent',
+      validation: (Rule) => Rule.required()
     })
   ],
 
