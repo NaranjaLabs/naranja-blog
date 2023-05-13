@@ -11,11 +11,9 @@ export default function revalidateAction(originalAction: any, type: Props) {
         originalResult.onHandle();
         const draft = props.draft;
         const published = props.published;
-        const slug = draft ? draft.slug.current : published.slug.current;
+        const slug: string =
+          type === 'publish' ? draft.slug.current : published.slug.current;
         const time = type === 'delete' ? 10000 : 5000;
-        console.log(time);
-        console.log(slug);
-
         setTimeout(async () => {
           await fetch(`/api/revalidate?slug=${slug}`);
         }, time);
