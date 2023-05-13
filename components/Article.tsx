@@ -38,7 +38,7 @@ export default function Article({ post }: { post: Post }) {
             href={`/post/${post.slug.current}`}
             className="text-[#1473E6] font-bold"
           >
-            Read Full
+            Ler completo
           </Link>
         </div>
       </div>
