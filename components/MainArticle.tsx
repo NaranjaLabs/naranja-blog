@@ -18,7 +18,8 @@ export default function MainArticle({ post }: { post: Post }) {
       </div>
       <div className="lg:max-w-2xl py-1">
         <div className="text-xs mb-2">
-          <span className="font-bold">Front-end</span> * <span>1 Hour Ago</span>
+          <span className="font-bold">{post.categories[0].title}</span> *{' '}
+          <span>{new Date(post.publishedAt).toLocaleDateString('pt-br')}</span>
         </div>
         <h2 className="font-black text-xl">{post.title}</h2>
         <div className="mb-9 line-clamp-3 sm:line-clamp-4 md:line-clamp-none">
