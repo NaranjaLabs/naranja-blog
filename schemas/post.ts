@@ -22,6 +22,12 @@ export default defineType({
       }
     }),
     defineField({
+      name: 'description',
+      title: 'Descrição do Artigo',
+      type: 'text',
+      validation: (Rule) => Rule.required().min(10).max(320)
+    }),
+    defineField({
       name: 'author',
       title: 'Author',
       type: 'reference',
