@@ -59,9 +59,9 @@ export default async function Post({ params: { slug } }: Props) {
               </span>
             </div>
           </div>
-          <p className="mt-2">
+          <article className="mt-2">
             <PortableText components={RichTextComponents} value={post.body} />
-          </p>
+          </article>
         </div>
       </div>
       {/* Sidebar */}

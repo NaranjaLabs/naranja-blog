@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+import CodeText from './CodeText';
+
 import urlFor from '@lib/imageUrlBuilder';
 
 const RichTextComponents = {
@@ -18,6 +20,9 @@ const RichTextComponents = {
           />
         </div>
       );
+    },
+    code: ({ value: { code, language } }: any) => {
+      return <CodeText language={language}>{code}</CodeText>;
     }
   },
   list: {
@@ -31,9 +36,9 @@ const RichTextComponents = {
     )
   },
   block: {
-    normal: ({ children }: any) => (
-      <p className="mb-6 break-words">{children}</p>
-    ),
+    // normal: ({ children }: any) => (
+    //   <p className="mb-6 break-words">{children}</p>
+    // ),
     h1: ({ children }: any) => (
       <h1 className="py-10 text-3xl font-bold md:text-5xl">{children}</h1>
     ),
