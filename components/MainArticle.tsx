@@ -1,39 +1,36 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import img from '/public/imagem.webp';
-export default function MainArticle() {
+import { Post } from '../typings';
+
+import urlFor from '@lib/imageUrlBuilder';
+
+export default function MainArticle({ post }: { post: Post }) {
   return (
     <div className="lg:flex gap-4 border-[1px] rounded-md p-2">
-      <div className="w-full">
+      <div className=" h-auto w-[400px] relative">
         <Image
           alt="Imagem do artigo"
-          // width={500}
-          // height={280}
-          src={img}
-          className="h-full lg:min-w-[400px] object-cover"
+          src={urlFor(post.mainImage).url()}
+          className="object-cover"
+          fill
         />
       </div>
       <div className="lg:max-w-2xl py-1">
         <div className="text-xs mb-2">
-          <span className="font-bold">Front-end</span> * <span>1 Hour Ago</span>
+          <span className="font-bold">{post.categories[0].title}</span> *{' '}
+          <span>{new Date(post.publishedAt).toLocaleDateString('pt-br')}</span>
         </div>
-        <h2 className="font-black text-xl">
-          Optimizing CSS for faster page loads{' '}
-        </h2>
+        <h2 className="font-black text-xl">{post.title}</h2>
         <div className="mb-9 line-clamp-3 sm:line-clamp-4 md:line-clamp-none">
-          Not long ago I decided to improve the loading times of my website. It
-          already loads pretty fast, but I knew there was still room for
-          improvement and one of them was CSS loading. I will walk you through
-          the process and show you how you can improve your load times as well.
-          To see how CSS affects the load time of a webpage we first have to
-          know how the browser converts an HTML document into a functional
-          webpage...
+          {post.description}
         </div>
         <div className="flex justify-between">
-          <span>3 Min Read</span>
-          <Link href="#" className="text-[#1473E6] font-bold">
-            Read Full
+          <Link
+            href={`/post/${post.slug.current}`}
+            className="text-[#1473E6] font-bold"
+          >
+            Ler artigo
           </Link>
         </div>
       </div>
