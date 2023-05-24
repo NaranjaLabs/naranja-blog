@@ -8,7 +8,7 @@ import urlFor from '@lib/imageUrlBuilder';
 export default function MainArticle({ post }: { post: Post }) {
   return (
     <div className="flex flex-col gap-4 border-[1px] rounded-md p-2 md:flex-row">
-      <div className="relative min-h-[200px] overflow-hidden min-w-[300px] md:flex-1">
+      <div className="relative min-h-[200px] overflow-hidden md:min-w-[300px] md:flex-1">
         <Image
           src={urlFor(post.mainImage).url()}
           alt="Post image"
