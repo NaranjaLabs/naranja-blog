@@ -65,7 +65,7 @@ export default async function Post({ params: { slug } }: Props) {
         </div>
       </div>
       {/* Sidebar */}
-      <div className="lg:max-w-xs w-full bg-white p-[3%] pt-8 relative mt-8 lg:mt-0 h-72 lg:h-full">
+      <div className="lg:max-w-xs w-full bg-white p-[3%] pt-8 relative mt-8 lg:mt-0 lg:h-full">
         <div className="grid place-items-center gap-4">
           <div className="lg:block mx-auto flex items-center justify-evenly w-[90%] max-w-3xl ">
             <div className="flex items-center gap-4 lg:justify-center">
@@ -78,10 +78,31 @@ export default async function Post({ params: { slug } }: Props) {
               />
               <p>{post.author.name}</p>
             </div>
-            <div className="w-[70%] lg:w-full max-w-sm lg:mt-2 block text-xs">
-              <Link href={post.author.linkedin}>{post.author.linkedin}</Link>
-              <br />
-              <Link href={post.author.github}>{post.author.github}</Link>
+            <div className="w-[70%] lg:w-full max-w-sm lg:mt-8 text-xs flex justify-center gap-8">
+              <Link
+                href={post.author.linkedin}
+                className="flex items-center gap-2 text-lg"
+              >
+                <Image
+                  src="/icons/linkedin.svg"
+                  height={20}
+                  width={20}
+                  alt="Linkedin button"
+                />
+                {'LinkedIn'}
+              </Link>
+              <Link
+                href={post.author.github}
+                className="flex items-center gap-2 text-lg"
+              >
+                <Image
+                  src="/icons/github.svg"
+                  height={20}
+                  width={20}
+                  alt="GitHub button"
+                />
+                {'GitHub'}
+              </Link>
             </div>
           </div>
           <h4 className="lg:mx-4 text-sm">
