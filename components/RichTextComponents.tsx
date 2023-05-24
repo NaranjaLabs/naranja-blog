@@ -66,8 +66,7 @@ const RichTextComponents = {
         <Link
           href={value.href}
           rel={rel}
-          className="self-center rounded-md bg-[#134F80] px-7 py-3 font-semibold
-          text-white decoration-[#F7AB0A] hover:bg-[#008AFC] hover:decoration-black"
+          className="self-center text-[#4b4b4b] font-semibold underline decoration-[#4b4b4b]"
         >
           {children}
         </Link>
