@@ -19,15 +19,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <Script
-        src="http://localhost:3000/script.js"
-        data-website-id="84e34a49-d393-4819-b883-3fdf0c98d86c"
-      />
       <body className="bg-[#F8F8F8]">
         <Header />
         {children}
         <Footer />
       </body>
+      <Script
+        async
+        src="http://localhost:3000/script.js"
+        data-website-id="84e34a49-d393-4819-b883-3fdf0c98d86c"
+      />
     </html>
   );
 }
