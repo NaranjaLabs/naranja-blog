@@ -4,6 +4,7 @@ import Footer from '@components/Footer';
 import Header from '@components/Header';
 
 import '../globals.css';
+import Script from 'next/script';
 
 export const metadata = {
   title: 'Naranja Blog',
@@ -18,13 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <Head>
-        <script
-          async
-          src="http://localhost:3000/script.js"
-          data-website-id="84e34a49-d393-4819-b883-3fdf0c98d86c"
-        ></script>
-      </Head>
+      <Script
+        src="http://localhost:3000/script.js"
+        data-website-id="84e34a49-d393-4819-b883-3fdf0c98d86c"
+      />
       <body className="bg-[#F8F8F8]">
         <Header />
         {children}
