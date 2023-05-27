@@ -19,10 +19,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <Head>
-        <link
-          rel="icon"
-          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍊</text></svg>"
-        />
+        <script
+          async
+          src="http://localhost:3000/script.js"
+          data-website-id="84e34a49-d393-4819-b883-3fdf0c98d86c"
+        ></script>
       </Head>
       <body className="bg-[#F8F8F8]">
         <Header />
