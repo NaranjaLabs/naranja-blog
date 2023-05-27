@@ -26,7 +26,7 @@ export default function RootLayout({
       </body>
       <Script
         async
-        src="http://localhost:3000/script.js"
+        src="https://naranja-blog-ec1t.vercel.app/script.js"
         data-website-id="84e34a49-d393-4819-b883-3fdf0c98d86c"
       />
     </html>
