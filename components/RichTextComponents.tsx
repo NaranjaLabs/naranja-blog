@@ -56,23 +56,23 @@ const RichTextComponents = {
         {children}
       </blockquote>
     )
-  },
-  marks: {
-    link: ({ children, value }: any) => {
-      const rel = !value.href.startsWith('/')
-        ? 'noreferrer noopener'
-        : undefined;
-      return (
-        <Link
-          href={value.href}
-          rel={rel}
-          className="self-center text-[#4b4b4b] font-semibold underline decoration-[#4b4b4b]"
-        >
-          {children}
-        </Link>
-      );
-    }
   }
+  // marks: {
+  //   link: ({ children, value }: any) => {
+  //     const rel = !value.href.startsWith('/')
+  //       ? 'noreferrer noopener'
+  //       : undefined;
+  //     return (
+  //       <Link
+  //         href={value.href}
+  //         rel={rel}
+  //         className="self-center text-[#4b4b4b] font-semibold underline decoration-[#4b4b4b]"
+  //       >
+  //         {children}
+  //       </Link>
+  //     );
+  //   }
+  // }
 };
 
 export default RichTextComponents;
